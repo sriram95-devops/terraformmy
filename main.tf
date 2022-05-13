@@ -10,15 +10,15 @@ terraform {
 provider "azurerm" {
   features {}
 }
-resource "azurerm_resource_group" "terrasmdshj" {
-  name     = "example-resources"
+resource "azurerm_resource_group" "RG_today" {
+  name     = "resources"
   location = "eastus"
 }
 
 resource "azurerm_app_service_plan" "appplan" {
   name                = "example-appserviceplan"
-  location            = azurerm_resource_group.terrasmdshj.location
-  resource_group_name = azurerm_resource_group.terrasmdshj.name
+  location            = azurerm_resource_group.RG_today.location
+  resource_group_name = azurerm_resource_group.RG_today.name
 
   sku {
     tier = "Standard"
@@ -28,7 +28,7 @@ resource "azurerm_app_service_plan" "appplan" {
 
 resource "azurerm_app_service" "webappmy" {
   name                = "qwertyuiop"
-  location            = azurerm_resource_group.terrasmdshj.location
-  resource_group_name = azurerm_resource_group.terrasmdshj.name
+  location            = azurerm_resource_group.RG_today.location
+  resource_group_name = azurerm_resource_group.RG_today.name
   app_service_plan_id = azurerm_app_service_plan.appplan.id
 }

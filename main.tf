@@ -16,7 +16,7 @@ resource "azurerm_resource_group" "RG_today" {
 }
 
 resource "azurerm_app_service_plan" "appplan" {
-  name                = "example-appserviceplan"
+  name                = "appserviceplan"
   location            = azurerm_resource_group.RG_today.location
   resource_group_name = azurerm_resource_group.RG_today.name
 
@@ -27,7 +27,7 @@ resource "azurerm_app_service_plan" "appplan" {
 }
 
 resource "azurerm_app_service" "webappmy" {
-  name                = "qwertyuiop"
+  name                = "webap13012022"
   location            = azurerm_resource_group.RG_today.location
   resource_group_name = azurerm_resource_group.RG_today.name
   app_service_plan_id = azurerm_app_service_plan.appplan.id

@@ -20,7 +20,7 @@ stages:
     - bash: echo Before copying Contents in Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory)      
     - task: CopyFiles@2
       inputs:
-       SourceFolder: '$(System.DefaultWorkingDirectory)/main.tf'
+       SourceFolder: '$(System.DefaultWorkingDirectory)/'
        Contents: '**'
        TargetFolder: '$(Build.ArtifactStagingDirectory)'
     - task: PublishBuildArtifacts@1

@@ -27,10 +27,8 @@ resource "azurerm_app_service_plan" "appplan" {
 }
 
 resource "azurerm_app_service" "webappmy" {
-  name                = "example-app-service"
+  name                = "qwertyuiop"
   location            = azurerm_resource_group.terrasmdshj.location
   resource_group_name = azurerm_resource_group.terrasmdshj.name
   app_service_plan_id = azurerm_app_service_plan.appplan.id
-
-  
 }

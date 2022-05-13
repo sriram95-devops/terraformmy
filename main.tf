@@ -13,12 +13,12 @@ provider "azurerm" {
 provider "azurerm" {
   features {}
 }
-resource "azurerm_resource_group" "example" {
+resource "azurerm_resource_group" "terrasmdshj" {
   name     = "example-resources"
   location = "West Europe"
 }
 
-resource "azurerm_app_service_plan" "example" {
+resource "azurerm_app_service_plan" "appplan" {
   name                = "example-appserviceplan"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
@@ -29,7 +29,7 @@ resource "azurerm_app_service_plan" "example" {
   }
 }
 
-resource "azurerm_app_service" "example" {
+resource "azurerm_app_service" "webappmy" {
   name                = "example-app-service"
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name

@@ -40,3 +40,4 @@ resource "azurerm_app_service" "webappmy" {
   app_settings = {
     "SOME_KEY" = "some-value"
   }
+}

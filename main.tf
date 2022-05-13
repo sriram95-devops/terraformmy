@@ -32,12 +32,5 @@ resource "azurerm_app_service" "webappmy" {
   resource_group_name = azurerm_resource_group.terrasmdshj.name
   app_service_plan_id = azurerm_app_service_plan.appplan.id
 
-  site_config {
-    dotnet_framework_version = "v4.0"
-    scm_type                 = "LocalGit"
-  }
-
-  app_settings = {
-    "SOME_KEY" = "some-value"
-  }
+  
 }
